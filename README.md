@@ -108,3 +108,5 @@ IoT smart room automation
 Museum/art gallery protective lighting systems
 
 OUTPUT PICTURE 
+
+![Image](https://github.com/user-attachments/assets/336d6aed-0d35-4d4d-aada-07f3e0d06f45)
