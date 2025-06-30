@@ -1,0 +1,31 @@
+CODE FOR IOT SECURITY SYSTEM ON TINKER CARD
+
+int ldrPin = A0;        // LDR connected to analog pin A0
+int ledOrange = 8;      // Orange LED connected to digital pin 8
+int ledRed = 7;         // Red LED connected to digital pin 7
+
+int ldrValue = 0;
+int threshold = 500;    // Adjust based on your simulation brightness
+
+void setup() {
+  pinMode(ledOrange, OUTPUT);
+  pinMode(ledRed, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  ldrValue = analogRead(ldrPin);  // Read LDR value
+  Serial.println(ldrValue);       // For debugging in Serial Monitor
+
+  if (ldrValue < threshold) {
+    // Light level is low (someone blocking light)
+    digitalWrite(ledOrange, HIGH);
+    digitalWrite(ledRed, HIGH);
+  } else {
+    // Light level is normal
+    digitalWrite(ledOrange, LOW);
+    digitalWrite(ledRed, LOW);
+  }
+
+  delay(200); // Small delay to avoid flickering
+}
